@@ -21,9 +21,7 @@
                 <li>{{ $error }}</li>
         </ul>
         @endforeach
-
-        <x-alert type="danger" :session="session('login_error')"/>
-
+        
         <x-alert type="danger" :session="session('logout')"/>
 
   <label for="inputEmail" class="sr-only">Email address</label>

@@ -29,11 +29,11 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             return redirect()->route('home')
-            ->with('login_success','ログインに成功しました。');
+            ->with('success','ログインに成功しました。');
         }
 
         return back()->withErrors([
-            'login_error' => 'メールアドレスかパスワードが間違っています。',
+            'danger' => 'メールアドレスかパスワードが間違っています。',
         ]);
     }
 
@@ -52,6 +52,6 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('showLogin')
-        ->with('logout','ログアウトしました。');;
+        ->with('danger','ログアウトしました。');;
     }
 }
