@@ -21,11 +21,19 @@
                 <li>{{ $error }}</li>
         </ul>
         @endforeach
+
         @if (session('login_error'))
           <div class="alert alert-danger">
             {{ session('login_error')}}
           </div>
         @endif
+
+        @if (session('logout'))
+          <div class="alert alert-danger">
+            {{ session('logout')}}
+          </div>
+        @endif
+
   <label for="inputEmail" class="sr-only">Email address</label>
   <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address"  autofocus>
   <label for="inputPassword" class="sr-only">Password</label>

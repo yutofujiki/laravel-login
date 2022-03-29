@@ -23,8 +23,11 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-//ホーム画面
-Route::get('home',function(){
-  return view('home');
-})->name('home');
+  //ホーム画面
+  Route::get('home',function(){
+    return view('home');
+  })->name('home');
+  //ログアウト
+  Route::post('logout',
+  [AuthController::class, 'logout'])->name('logout');
 });
