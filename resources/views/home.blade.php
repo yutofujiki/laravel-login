@@ -10,11 +10,9 @@
 <body>
   <div class="container">
     <div class="mt-5">
-      @if (session('login_success'))
-      <div class="alert alert-success">
-        {{ session('login_success')}}
-      </div>
-      @endif
+
+    <x-alert type="success" :session="session('login_success')"/>
+
       <h3>プロフィール</h3>
       <ul>
         <li>名前：{{ Auth::user()->name }}</li>

@@ -6,14 +6,30 @@ use Illuminate\View\Component;
 
 class Alert extends Component
 {
+
+     /**
+     * 警告タイプ
+     *
+     * @var string
+     */
+    public $type;
+
+    /**
+     * 警告メッセージ
+     *
+     * @var string
+     */
+    public $session;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($type, $session)
     {
-        //
+        $this->type = $type;
+        $this->session = $session;
     }
 
     /**
